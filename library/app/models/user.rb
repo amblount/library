@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  has_many :liberry_users, dependent: :destroy
+  has_many :liberries, through: :liberry_users
   has_secure_password
 
   def self.confirm(params)

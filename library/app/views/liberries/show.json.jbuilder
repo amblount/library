@@ -1,0 +1,1 @@
+json.partial! "liberries/liberry", liberry: @liberry

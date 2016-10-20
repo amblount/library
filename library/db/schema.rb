@@ -10,10 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161019203820) do
+ActiveRecord::Schema.define(version: 20161020211030) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "liberries", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "floor_count"
+    t.integer  "floor_area"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "liberry_users", force: :cascade do |t|
+    t.integer  "liberry_id"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["liberry_id"], name: "index_liberry_users_on_liberry_id", using: :btree
+    t.index ["user_id"], name: "index_liberry_users_on_user_id", using: :btree
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email"
@@ -24,4 +41,6 @@ ActiveRecord::Schema.define(version: 20161019203820) do
     t.datetime "updated_at",      null: false
   end
 
+  add_foreign_key "liberry_users", "liberries"
+  add_foreign_key "liberry_users", "users"
 end

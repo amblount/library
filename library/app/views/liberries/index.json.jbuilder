@@ -1,0 +1,1 @@
+json.array! @liberries, partial: 'liberries/liberry', as: :liberry

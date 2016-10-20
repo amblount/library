@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @liberry.name %>
+</p>
+
+<p>
+  <strong>Floor count:</strong>
+  <%= @liberry.floor_count %>
+</p>
+
+<p>
+  <strong>Florr area:</strong>
+  <%= @liberry.florr_area %>
+</p>
+
+<%= link_to 'Edit', edit_liberry_path(@liberry) %> |
+<%= link_to 'Back', liberries_path %>

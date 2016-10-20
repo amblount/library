@@ -1,0 +1,1 @@
+json.array! @liberry_users, partial: 'liberry_users/liberry_user', as: :liberry_user

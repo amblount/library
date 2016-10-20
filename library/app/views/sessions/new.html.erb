@@ -3,7 +3,7 @@
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
-    <%= form_tag '/sessions', method: "post" do %>
+    <%= form_tag '/sessions/new', method: "post" do %>
 
       <span>Email: </span><br>
     	<%= text_field_tag :email, nil, required: true %><br>

@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Liberry:</strong>
+  <%= @liberry_user.liberry.name %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @liberry_user.user.email %>
+</p>
+
+<%= link_to 'Edit', edit_liberry_user_path(@liberry_user) %> |
+<%= link_to 'Back', liberry_users_path %>

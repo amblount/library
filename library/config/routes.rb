@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+
+
   get 'sessions/new'
 
   get 'users/new'
@@ -14,7 +16,10 @@ Rails.application.routes.draw do
   post "/sessions/new", to: "sessions#create"
 
   delete "/logout", to: "sessions#destroy"
+  resources :liberry_users
 
-  resources :users
+  resources :users do
+    resources :liberries
+  end
 
 end

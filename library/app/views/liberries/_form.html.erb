@@ -1,0 +1,32 @@
+<%= form_for(liberry) do |f| %>
+  <% if liberry.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(liberry.errors.count, "error") %> prohibited this liberry from being saved:</h2>
+
+      <ul>
+      <% liberry.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :floor_count %>
+    <%= f.number_field :floor_count %>
+  </div>
+
+  <div class="field">
+    <%= f.label :florr_area %>
+    <%= f.number_field :florr_area %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

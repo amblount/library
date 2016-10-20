@@ -3,10 +3,7 @@ class SessionsController < ApplicationController
   end
 
   def create
-    @user = User.find_by(email: params[:email].downcase)
-    if @user && @user.authenticate(params[:password])
-      #log in
-      log_in
+    if User.confirm(params)
       flash[:notice] = "Successfully logged in."
       redirect_to user_path @user.id
     else
@@ -18,7 +15,7 @@ class SessionsController < ApplicationController
 
   def destroy
     session[:user_id] = nil
-    flash[:notice] = "Successfully logged out." 
+    flash[:notice] = "Successfully logged out."
     redirect_to root_path
   end
 end

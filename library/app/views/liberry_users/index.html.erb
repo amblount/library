@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Liberry Users</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Liberry</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @liberry_users.each do |liberry_user| %>
+      <tr>
+        <td><%= liberry_user.liberry.name %></td>
+        <td><%= liberry_user.user.email %></td>
+        <td><%= link_to 'Show', liberry_user %></td>
+        <td><%= link_to 'Edit', edit_liberry_user_path(liberry_user) %></td>
+        <td><%= link_to 'Destroy', liberry_user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Liberry User', new_liberry_user_path %>
